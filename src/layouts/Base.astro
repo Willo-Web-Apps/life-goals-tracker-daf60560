@@ -8,7 +8,7 @@ interface Props {
   description?: string;
 }
 
-const { title = "Untitled Business", description = "a personal to-do tracker and for getting more out of life" } = Astro.props;
+const { title = "Flowo — Do more. Live better.", description = "Flowo is the personal to-do tracker that connects your daily tasks to your biggest goals. Capture what matters, focus each day, and get more out of life." } = Astro.props;
 ---
 <!doctype html>
 <html lang="en" class="scroll-smooth">
@@ -16,8 +16,22 @@ const { title = "Untitled Business", description = "a personal to-do tracker and
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
+    <meta property="og:site_name" content="Flowo" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+
+    <!-- Brand / browser chrome -->
+    <meta name="theme-color" content="#0D7377" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
     <title>{title}</title>
   </head>
   <body class="min-h-screen flex flex-col bg-surface-50 text-surface-900 font-body antialiased">
@@ -26,5 +40,14 @@ const { title = "Untitled Business", description = "a personal to-do tracker and
       <slot />
     </main>
     <Footer />
+
+    <!-- Scroll-triggered reveal: activates .fade-on-scroll elements as they enter the viewport -->
+    <script>
+      const observer = new IntersectionObserver(
+        (entries) => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } }),
+        { threshold: 0.12 }
+      );
+      document.querySelectorAll('.fade-on-scroll').forEach(el => observer.observe(el));
+    </script>
   </body>
 </html>

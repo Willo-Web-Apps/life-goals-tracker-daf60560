@@ -1,10 +1,9 @@
 import { defineConfig } from 'astro/config';
-import sitemap from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
   site: 'https://life-goals-tracker.onrender.com',
-  integrations: [sitemap()],
+  integrations: [],
   vite: {
     plugins: [tailwindcss()],
   },

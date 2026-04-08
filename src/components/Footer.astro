@@ -1,11 +1,31 @@
 ---
 const year = new Date().getFullYear();
 ---
-<footer class="border-t border-surface-200 py-10 mt-auto">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-      <p class="text-sm font-semibold text-surface-900 font-display">Untitled Business</p>
-      <p class="text-sm text-surface-800/50">&copy; {year} Untitled Business. All rights reserved.</p>
+<footer style="background-color: #FDFAF6; border-top: 1px solid #EDD4B8;">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+    <!-- Top row: logo + tagline + links -->
+    <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-8">
+      <!-- Logo + tagline -->
+      <div>
+        <a href="/" style="font-size: 1.5rem; font-weight: 800; color: #0D7377; font-family: 'Plus Jakarta Sans', sans-serif; text-decoration: none;">Flowo</a>
+        <p style="margin-top: 0.5rem; font-size: 0.9375rem; color: rgba(26,26,46,0.55); font-family: 'Plus Jakarta Sans', sans-serif;">
+          Get more out of life.
+        </p>
+      </div>
+
+      <!-- Links -->
+      <div class="flex items-center gap-8">
+        <a href="#" style="font-size: 0.875rem; font-weight: 500; color: rgba(26,26,46,0.6); text-decoration: none; font-family: 'Plus Jakarta Sans', sans-serif;">About</a>
+        <a href="#" style="font-size: 0.875rem; font-weight: 500; color: rgba(26,26,46,0.6); text-decoration: none; font-family: 'Plus Jakarta Sans', sans-serif;">Privacy</a>
+        <a href="mailto:hello@flowo.app" style="font-size: 0.875rem; font-weight: 500; color: rgba(26,26,46,0.6); text-decoration: none; font-family: 'Plus Jakarta Sans', sans-serif;">Contact</a>
+      </div>
+    </div>
+
+    <!-- Bottom: copyright -->
+    <div style="margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid #EDD4B8;">
+      <p style="font-size: 0.875rem; color: rgba(26,26,46,0.4); font-family: 'Plus Jakarta Sans', sans-serif;">
+        &copy; {year} Flowo. All rights reserved.
+      </p>
     </div>
   </div>
 </footer>
